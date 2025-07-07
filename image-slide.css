@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.conteaner {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.conteaner .slide .item {
+    height: 300px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 20px;
+    border: 2px solid white;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translate(0, 0);
+}
+
+.slide .item:nth-child(3) {
+    left: 50%;
+}
+
+.slide .item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+
+.slide .item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+
+.slide .item:nth-child(n + 6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+
+.item .content {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    display: none;
+}
+
+.slide .item:nth-child(2) .content {
+    display: block;
+}
+
+.content h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    animation: animate 1s ease-in-out forwards;
+}
+
+.content button {
+    height: 40px;
+    width: 80px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #48cae4;
+    animation: animate 1s ease-in-out forwards;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0);
+        filter: blur(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0px);
+    }
+}
+
+.button {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 20px;
+}
+
+.button button {
+    height: 35px;
+    width: 70px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #48cae4;
+    margin-left: 20px;
+    border: 2px solid white;
+}
+
+button:hover {
+    background-color: #ababab;
+    color: #f5f5f5;
+}
